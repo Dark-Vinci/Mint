@@ -4,3 +4,7 @@
     margin: 0;
 }
 
+@mixin Rectangle($w: auto, $h: auto) {
+    width: $w;
+    height: $h;
+}
