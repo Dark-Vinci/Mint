@@ -1,3 +1,81 @@
+@import '../../sass/mixins/border.scss';
+@import '../../sass/mixins/others.scss';
+@import '../../sass/mixins/alignment.scss';
+@import '../../sass/constant/color.scss';
+
 div.container {
-    border-top: 1px solid #000;
+    @include Rectangle(100vw, auto);
+    @include GridCenter();
+    @include Debug();
+
+    & > div.nav_container {
+        @include Rectangle(80%, 100%);
+        @include Flex(row, space-between);
+        // @include Debug(white);
+
+        & > div {
+            margin: 0 10px 0 10px;
+            // @include Debug();
+            flex-basis: 25%;
+            height: 100%;
+            // width: 100%;
+        }
+
+        & > div.right {
+            @include GridCenter();
+
+            & > div.button_container {
+                width: 100%;
+                @include Flex(row, space-between);
+
+                button {
+                    border-radius: 10px;
+                    font-size: 18px;
+                    background-color: black;
+                }
+
+                button:first-child {
+                    color: $nav-button-color;
+                    border: 1px solid currentColor;
+                    @include Rectangle(100px, 48px);
+
+                    &:hover {
+                        background-color: $nav-button-color;
+                        color: black;
+                    }
+                }
+
+                button:nth-child(2) {
+                    border: 1px solid white;
+                    @include Rectangle(165px, 48px);
+                    color: white;
+
+                    &:hover {
+                        border: 1px solid currentColor;
+                        color: $nav-button-color;
+                    }
+                    // background-color: black;
+                }
+            }
+        }
+
+        & > div.mid {
+            flex-basis: 50%;
+
+            & > div.mid_container {
+                height: 100%;
+                // @include Debug(blue);
+                @include Flex(row, space-between);
+                & > a {
+                    // @include Debug(yellow);
+                    width: 100%;
+                    text-decoration: none;
+                    height: 40px;
+                    @include GridCenter();
+                    color: $footer-text-color;
+                }
+            }
+        }
+    }
+    // border-top: 1px solid #000;
 }

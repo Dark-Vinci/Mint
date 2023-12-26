@@ -8,3 +8,8 @@
     width: $w;
     height: $h;
 }
+
+@mixin BgNCol($bgCol: black, $tCol: white) {
+    color: $tCol;
+    background-color: $bgCol;
+}

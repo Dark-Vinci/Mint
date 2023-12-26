@@ -1,5 +1,12 @@
-
+@import '../sass/mixins/border.scss';
+@import '../sass/mixins/others.scss';
+@import '../sass/mixins/alignment.scss';
+@import '../sass/constant/color.scss';
 
 div.container {
     border-top: 1px solid #000;
+    & > body {
+        height: 5545px;
+        @include Flex(column, space-evenly);
+    }
 }
