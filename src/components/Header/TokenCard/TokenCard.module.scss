@@ -4,23 +4,48 @@
 @import '../../../sass/constant/color.scss';
 
 div.container {
-    @include Debug(white);
+    // @include Debug(white);
     @include Rectangle(500px, 90px);
     border-radius: 10px;
     @include BgNCol($token-bg-color, white);
+    @include ZeroSpace();
+    max-width: 500px;
 
     @include Flex(row, space-between);
-    padding: 0 10px 0 10px;
 
     & > div {
-        @include Debug(blue);
+        // @include Debug(blue);
+        flex-basis: 50%;
+        height: 50px;
+    }
+
+    & > div.right {
+        & > p {
+            // @include Debug(yellow);
+            width: 100%;
+            font-weight: bold;
+            text-align: left;
+        }
+        @include Flex(row, space-around);
     }
 
     & > div.img {
-        @include Rectangle(100%);
+        margin-left: 20px;
         @include GridCenter();
+        @include Flex(row, flex-start);
+
+        & > div.mid {
+            // @include Debug(green);
+            @include Flex(column, center, flex-start);
+            & > p.token_name {
+                color: $token-text-color;
+                font-size: 15px;
+            }
+        }
+
 
         img {
+            margin-right: 20px;
             @include Square(46px);
         }
     }

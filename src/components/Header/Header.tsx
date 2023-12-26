@@ -9,24 +9,39 @@ export function Header(): JSX.Element {
     <div className={style.container}>
       <div className={style.header_container}>
         <div className={style.left}>
-          <p>Tokenize anything effortlessly.</p>
-
-          <div className={style.description}>
+          <div className={style.left_container}>
             <p>
-              A smart token building platform WITHOUT the need for coding or
-              providing liquidity on the Binance Smart Chain.
+              Tokenize anything <span>effortlessly.</span>
             </p>
-          </div>
 
-          <div className={style.buttons}>
-            <div className={style.bot}>
-              <button>Buy Mints</button>
-              <button>Create Token</button>
+            <div className={style.description}>
+              <p>
+                A smart token building platform WITHOUT the need for coding or
+                providing liquidity on the Binance Smart Chain.
+              </p>
             </div>
-            <div>
-              <a href=".">
-                How to buy mints <span className={style.icon}>aab</span>
-              </a>
+
+            <div className={style.buttons}>
+              <div className={style.bot}>
+                <button>Buy Mints</button>
+                <button>Create Token</button>
+              </div>
+              <div>
+                <a href=".">
+                  How to buy mints{' '}
+                  <img
+                    src="https://mint.club/static/media/arrow-right-primary.40950852.svg"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div className={style.binance}>
+              <img
+                src="https://mint.club/static/media/binancelabs-logo.ec0fb3b2.svg"
+                alt="binance"
+              />
             </div>
           </div>
         </div>
@@ -60,9 +75,19 @@ export function Header(): JSX.Element {
                 )}
               </div>
 
-              <div className={style.explore}>
+              {/* <div className={style.explore}>
                 <a href=".">Explore Tokens...</a>
-              </div>
+              </div> */}
+            </div>
+
+            <div className={style.explore}>
+              <a href=".">
+                Explore Tokens
+                <img
+                  src="https://mint.club/static/media/arrow-right-primary.40950852.svg"
+                  alt=""
+                />
+              </a>
             </div>
           </div>
         </div>

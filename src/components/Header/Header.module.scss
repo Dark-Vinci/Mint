@@ -7,31 +7,184 @@ div.container {
     @include Debug(yellow);
     @include Rectangle(100vw, auto);
     @include GridCenter();
+    background-color: $pg-bg-color;
+    color: white;
 
     & > div {
-        @include Debug(blue);
-        @include Rectangle(1120px, 100%);
+        // @include Debug(blue);
+        @include Rectangle(1120px, 845px);
         @include Flex(row, space-between);
 
         & > div {
-            @include Debug();
             height: 100%;
             flex-basis: 50%;
         }
 
-        & > div.right {
-            @include GridCenter();
-            & > div {
-                @include Debug(yellow);
+        & > div.left {
+            // @include Debug(green);
+            @include Flex(row, flex-start);
+
+            & > div.left_container {
+                // @include Debug(grey);
+                @include Rectangle(500px, 670px);
+                @include Flex(column, space-between);
+
+                & > * {
+                    width: 100%;
+                    // @include Debug();
+                }
+
+                & > div.binance {
+                    @include Flex(row, flex-start);
+                }
+
+                & > div.description {
+                    // @include Rectangle()
+                    height: 100px;
+                    p {
+                        font-size: 25px;
+                        text-align: left;
+                    }
+                }
+
+                & > div.buttons {
+                    // width: 100%;
+                    @include Flex(column, space-between);
+                    & > div:nth-child(2) {
+                        margin-top: 10px;
+                        width: 100%;
+                        // @include Debug(yellow);
+                        @include Flex(row, flex-start);
+                        a {
+                            @include Flex();
+                            text-decoration: none;
+                            color: $nav-button-color;
+
+                            img {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                    & > div.bot {
+                        // @include Debug(white);
+                        @include Flex(row, flex-start);
+                        width: 100%;
+                        
+                        button {
+                            @include Rectangle(145px, 50px);
+                            border: 1px solid #555555;
+                            border-radius: 10px;
+                            font-size: 20px;
+                            background-color: inherit;
+                            color: white;
+
+                            &:hover {
+                                border-color: currentColor;
+                                color: $nav-button-color;
+                            }
+
+                            &:first-child {
+                                color: $nav-button-color;
+                                margin-right: 20px;
+                                border: 1px solid currentColor;
+
+                                &:hover {
+                                    background-color: $nav-button-color;
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & > p:first-child {
+                    text-align: left;
+                    font-size: 70px;
+
+                    & > span {
+                        color: $nav-button-color;
+                    }
+                }
             }
         }
 
-        & > div.left {
-            @include Debug(green);
-            @include Flex(column, space-evenly);
+        & > div.right {
+            @include GridCenter();
+            @include Rectangle(500px, 620px);
 
-            & > div {
-                @include Debug(grey);
+            & > div.right_container {
+                @include Rectangle(100%, 100%);
+                // @include Debug(yellow);
+                @include Flex(column, space-around, flex-end);
+
+                & > div.explore {
+                    @include Flex();
+                    a {
+                        color: $nav-button-color;
+                        margin-left: 60px;
+                        width: 100%;
+                        // @include Debug();
+                        // text-align: left;
+                        text-decoration: none;
+                        @include Flex(row, flex-start);
+
+                        img {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
+                & > div {
+                    // @include Debug();
+                    width: 100%;
+
+                    &.title {
+                        // @include Debug(white);
+                        P {
+                            text-align: left;
+                            font-size: 25px;
+                            margin-left: 60px;
+                            font-weight: 20px;
+                        }
+                    }
+
+                    &.cards {
+                        width: 100%;
+                        // @include Debug(green);
+                        @include Flex(column, space-between);
+
+                        & > div.the_card {
+                            width: 100%;
+                            // @include Debug(aqua);
+                            @include Flex(column, space-between, flex-end);
+
+                            & > * {
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        & > p {
+                            width: 100%;
+                            @include Flex(row, flex-end);
+                            // @include Debug(tomato);
+                            padding-right: 30px;
+                            color: $token-text-color;
+                            margin-bottom: 5px;
+
+                            & > span {
+                                @include GridCenter();
+                                // @include Debug(blue);
+                                width: 125px;
+
+                                &:nth-child(2) {
+                                    // @include Debug();
+                                    @include Flex(row, flex-start)
+                                }
+                            }
+                        }
+                    }
+                    // @include Flex(row, flex-end);
+                }
             }
         }
     }

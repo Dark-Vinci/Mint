@@ -21,11 +21,10 @@ export function TokenCard({
     <div className={style.container}>
       <div className={style.img}>
         <img src={url} alt={'url'} />
-      </div>
-
-      <div className={style.mid}>
-        <p className={style.name}>{name}</p>
-        <p className={style.token_name}>{tokenName}</p>
+        <div className={style.mid}>
+          <p className={style.name}>{name}</p>
+          <p className={style.token_name}>{tokenName}</p>
+        </div>
       </div>
 
       <div className={style.right}>
