@@ -4,6 +4,11 @@
     margin: 0;
 }
 
+@mixin Square($l: auto) {
+    width: $l;
+    height: $l;
+}
+
 @mixin Rectangle($w: auto, $h: auto) {
     width: $w;
     height: $h;

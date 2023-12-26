@@ -1,3 +1,38 @@
+@import '../../sass/mixins/border.scss';
+@import '../../sass/mixins/others.scss';
+@import '../../sass/mixins/alignment.scss';
+@import '../../sass/constant/color.scss';
+
 div.container {
-    border-top: 1px solid #000;
+    @include Debug(yellow);
+    @include Rectangle(100vw, auto);
+    @include GridCenter();
+
+    & > div {
+        @include Debug(blue);
+        @include Rectangle(1120px, 100%);
+        @include Flex(row, space-between);
+
+        & > div {
+            @include Debug();
+            height: 100%;
+            flex-basis: 50%;
+        }
+
+        & > div.right {
+            @include GridCenter();
+            & > div {
+                @include Debug(yellow);
+            }
+        }
+
+        & > div.left {
+            @include Debug(green);
+            @include Flex(column, space-evenly);
+
+            & > div {
+                @include Debug(grey);
+            }
+        }
+    }
 }

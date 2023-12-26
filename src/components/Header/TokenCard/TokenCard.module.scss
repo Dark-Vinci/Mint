@@ -1,0 +1,27 @@
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/others.scss';
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/constant/color.scss';
+
+div.container {
+    @include Debug(white);
+    @include Rectangle(500px, 90px);
+    border-radius: 10px;
+    @include BgNCol($token-bg-color, white);
+
+    @include Flex(row, space-between);
+    padding: 0 10px 0 10px;
+
+    & > div {
+        @include Debug(blue);
+    }
+
+    & > div.img {
+        @include Rectangle(100%);
+        @include GridCenter();
+
+        img {
+            @include Square(46px);
+        }
+    }
+}
