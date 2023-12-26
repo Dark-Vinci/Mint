@@ -7,7 +7,14 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <HomePage />
-      {/* <svg
+      {}
+    </div>
+  );
+}
+
+export default App;
+
+/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="169"
         height="44"
@@ -33,9 +40,4 @@ function App(): JSX.Element {
             </g>
           </g>
         </g>
-      </svg> */}
-    </div>
-  );
-}
-
-export default App;
+      </svg> */
