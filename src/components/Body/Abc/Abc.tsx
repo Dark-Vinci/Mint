@@ -7,6 +7,28 @@ import { GoKebabHorizontal } from 'react-icons/go';
 
 import style from './Abc.module.scss';
 
+const links = [
+  {
+    title: 'website',
+    icon: <IoMdGlobe size={'50px'} color="#838383" />,
+  },
+
+  {
+    title: 'social',
+    icon: <FaThumbsUp size={'50px'} color="#838383" />,
+  },
+
+  {
+    title: 'blog',
+    icon: <GrBlog size={'50px'} color="#838383" />,
+  },
+
+  {
+    title: 'chat',
+    icon: <PiChatsCircleDuotone size={'50px'} color="#838383" />,
+  },
+];
+
 export function Abc(): JSX.Element {
   return (
     <div className={style.container}>
@@ -25,22 +47,20 @@ export function Abc(): JSX.Element {
         </div>
 
         <div className={style.icons}>
-          <div className={style.website}>
-            <IoMdGlobe size={'30px'} />
-          </div>
-          <div className={style.socials}>
-            <FaThumbsUp />
-          </div>
-          <div className={style.blogs}>
-            <GrBlog />
-          </div>
-          <div className={style.chats}>
-            <PiChatsCircleDuotone />
-          </div>
+          {links.map(({ icon, title }, i) => {
+            return (
+              <div key={i}>
+                <div className={style.icon}>{icon}</div>
+                <div>
+                  <p>{title}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className={style.menu}>
-          <GoKebabHorizontal />
+          <GoKebabHorizontal size={'50px'} color="white" />
         </div>
       </div>
     </div>

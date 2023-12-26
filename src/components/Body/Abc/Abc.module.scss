@@ -4,30 +4,27 @@
 @import '../../../sass/constant/color.scss';
 
 div.container {
-    @include Debug();
+    // @include Debug();
     @include Rectangle(575px, 540px);
     border-radius: 30px;
-    // background-color: $hey-bg-color;
     @include GridCenter();
     @include BgNCol($hey-bg-color, white);
 
     & > div.abc_container {
         @include Rectangle(456px, 420px);
-        @include Debug(yellow);
-        @include Flex(column, space-between);
+        // @include Debug(yellow);
+        @include Flex(column, space-between, flex-start);
 
         & > div {
-            @include Debug();
+            // @include Debug();
             width: 100%;
         }
 
         & > div.description {
-            @include Debug(blue);
-            // @include Flex(column);
+            // @include Debug(blue);
             p {
                 @include Flex(column);
                 font-size: 35px;
-                // text-align: left;
                 span {
                     width: 100%;
                     text-align: left;
@@ -37,18 +34,32 @@ div.container {
 
         & > div.icons {
             height: 80px;
-            // @include Rectangle(80px);
-            @include Debug(white);
+            // @include Debug(white);
             @include Flex(row, space-between);
 
             & > div {
                 @include Rectangle(80px, 108px);
-                // border-radius: 100%;
-                border: 1px solid green;
+
+                & > div.icon {
+                    // @include Debug(yellow);
+                    @include Square(80px);
+                    @include GridCenter();
+                }
+
+                & > div:nth-child(2) {
+                    color: $social-tx-color;
+                    font-size: 20px;
+                }
             }
         }
 
+        & > div.menu {
+            @include Rectangle(80px);
+        }
+
         & > div.title {
+            // @include Debug();
+            text-align: left;
             p {
                 font-size: 60px;
                 // @include Flex(column);
