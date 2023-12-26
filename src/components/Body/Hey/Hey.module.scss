@@ -1,0 +1,70 @@
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/others.scss';
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/constant/color.scss';
+
+div.container {
+    // @include Debug();
+    @include Rectangle(900px, 323px);
+    border-radius: 50px;
+    @include BgNCol($hey-bg-color, white);
+
+    @include GridCenter();
+
+    & > div.hey_container {
+        @include Rectangle(780px, 200px);
+        @include Flex(row, space-between);
+        // @include Debug();
+
+        & > div.content {
+            width: 380px;
+            height: 100%;
+            & > * {
+                width: 100%;
+            }
+            @include Flex(column, space-between);
+
+            & > div.description {
+                font-size: 38px;
+                text-align: left;
+                @include Flex(column);
+                height: 136px;
+                span {
+                    text-align: left;
+                    // @include Debug(yellow);
+                    width: 100%;
+                    color: $nav-button-color;
+                }
+            }
+
+            & > div.button {
+                // @include Debug();
+                @include Flex(row, flex-start);
+
+                button {
+                    border: 1px solid currentColor;
+                    border-radius: 10px;
+                    color: $nav-button-color;
+                    background-color: inherit;
+                    @include Rectangle(135px, 48px);
+                    font-size: 18px;
+
+                    &:hover {
+                        background-color: $nav-button-color;
+                        color: black;
+                    }
+                }
+            }
+        }
+
+        & > div.right {
+            @include Rectangle(310px, 415px);
+
+            img {
+                // @include Debug();
+                @include Square(100%);
+                object-fit: fill;
+            }
+        }
+    }
+}

@@ -48,7 +48,6 @@ div.container {
                 }
 
                 & > div.buttons {
-                    // width: 100%;
                     @include Flex(column, space-between);
                     & > div:nth-child(2) {
                         margin-top: 10px;
@@ -124,7 +123,6 @@ div.container {
                         margin-left: 60px;
                         width: 100%;
                         // @include Debug();
-                        // text-align: left;
                         text-decoration: none;
                         @include Flex(row, flex-start);
 
@@ -183,7 +181,6 @@ div.container {
                             }
                         }
                     }
-                    // @include Flex(row, flex-end);
                 }
             }
         }

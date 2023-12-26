@@ -1,7 +1,7 @@
 import { JSX } from 'react';
 
 import style from './HomePage.module.scss';
-import { Footer, Header, Nav } from '@components';
+import { Body, Footer, Header, Nav } from '@components';
 
 export function HomePage(): JSX.Element {
   return (
@@ -14,6 +14,10 @@ export function HomePage(): JSX.Element {
         <header>
           <Header />
         </header>
+
+        <section>
+          <Body />
+        </section>
 
         <footer>
           <Footer />
