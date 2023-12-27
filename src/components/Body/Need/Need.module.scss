@@ -1,0 +1,24 @@
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/others.scss';
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/constant/color.scss';
+
+div.container {
+    // @include Debug();
+    @include Rectangle(325px, 540px);
+    @include BgNCol($hey-bg-color, white);
+    border-radius: 30px;
+
+    & > div {
+        @include Rectangle(195px, 540px);
+        font-size: 35px;
+        text-align: left;
+
+        p {
+            span {
+                color: $nav-button-color;
+                display: block;
+            }
+        }
+    }
+}
